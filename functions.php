@@ -55,7 +55,7 @@ function template_header()
             <section class="menu">
               <div class="flex">
                 <nav>
-                  <a href="index.php"><img class="logo" src="bilder/logo.png" alt="logo" /><a/>
+                  <a href="index.php"><img class="logo" src="./bilder/logo.png" alt="logo" /><a/>
                   <ul class="flex">
                     <li class="navItem">
                       <a href="./kategorieSite.php?KategorieNR=1">Woman</a>
@@ -76,11 +76,12 @@ function template_header()
               <a/>
                 
                 <div class="loginContainer">
-                  <a href="./login/login.php"> <img id="login-icon" width="32px" height="32px" src="./bilder/login/login-icon.png" alt="login icon">
+                  <a href="./login/login.php"> <img id="login-icon" width="32px" height="32px" src="./bilder/login/login-icon.png" alt="login icon"></a>
+                  <p id="username-login">
   EOT;
-  echo htmlspecialchars(@$_SESSION["username"]);
+                    echo htmlspecialchars(@$_SESSION["username"]);
   echo <<<EOT
-                </a>
+                  </p>
               </div>
 
           </section>
@@ -331,4 +332,9 @@ function template_cart()
 
                          
   EOT;
+}
+
+
+function shopNow(){
+  header("location: ./kategorieSite.php?KategorieNR=2");
 }

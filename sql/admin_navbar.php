@@ -24,8 +24,9 @@
                             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 
                                 <div class="navbar-nav">
-                                    <a class="nav-item nav-link active" href="admin_add.php">Artikel hinzufügen<span class="sr-only"></span></a>
-                                    <a class="nav-item nav-link active" href="admin_change.php">Artikel ändern<span class="sr-only"></span></a>
+                                    <a class="nav-item nav-link active" href="admin_add.php"> Artikel hinzufügen <span class="sr-only"></span></a>
+                                    <a class="nav-item nav-link active" href="admin_change.php"> Artikel ändern <span class="sr-only"></span></a>
+                                    <a class="nav-item nav-link active" href="user_manage.php"> User <span class="sr-only"></span></a>
                                 </div>
                                 
                             </div>
