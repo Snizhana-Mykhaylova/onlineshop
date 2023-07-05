@@ -1,0 +1,273 @@
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #1e212c;
+}
+
+section {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #17696a;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.container {
+  max-width: 1900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.kontakten {
+  color: white;
+  background: #1e212c;
+  padding: 20px 100px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.menu {
+  padding: 20px 100px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 130px;
+  height: 22px;
+  margin-right: 50px;
+}
+
+.cartIcon {
+  margin-right: 20px;
+}
+
+.cartCount {
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+
+nav {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+
+.navItem {
+  margin-right: 25px;
+}
+
+.greunDiv {
+  height: 34px;
+  background-color: #17696a;
+}
+
+.baner {
+  height: 800px;
+  background-image: url('./bilder/baner.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 100px;
+}
+
+.banerText {
+  position: relative;
+  top: 150px;
+}
+
+.captureSmall {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.captureGross {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 94px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+.button {
+  background-color: transparent;
+  border: 1px solid #17696a;
+  border-radius: 4px;
+  color: #17696a;
+  width: 152px;
+  height: 52px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button:hover {
+  color: white;
+  background-color: rgba(23, 105, 106, 1);
+}
+
+.kontaktenList {
+  position: relative;
+  top: -70px;
+}
+.kategorienItem {
+  text-align: center;
+  margin-right: 20px;
+}
+.sectionTittel {
+  text-align: center;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 58px;
+  margin-bottom: 50px;
+}
+.waren {
+  padding-top: 100px;
+  margin-bottom: 100px;
+}
+.warenItem {
+  margin-right: 37px;
+  width: 285px;
+
+}
+
+.warenItem:last-child {
+  margin-right: 0px;
+  
+}
+
+.beshreibung {
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 27px;
+  color: #424551;
+  height: 54px;
+}
+
+.subscribe {
+  background-color: rgb(241 245 249);
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscribeTitel {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 58px;
+  margin-bottom: 50px;
+}
+
+.subscribeItem {
+  border-color: rgba(23, 105, 106, 1);
+  margin-right: 15px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 6px 16px;
+  color: rgba(23, 105, 106, 1);
+}
+
+.subscribeList {
+  display: flex;
+  padding: 30px 0px;
+}
+
+.emailText {
+  margin-bottom: 15px;
+}
+
+.emailInput {
+  margin-bottom: 20px;
+  height: 50px;
+  border-radius: 6px;
+  border: 1px solid;
+  width: 495px;
+  padding: 0px 20px;
+  border-color: rgb(241 245 249);
+}
+footer {
+  background-color: rgba(30, 33, 44, 1);
+  color: rgba(255, 255, 255, 1);
+  padding: 100px 0px;
+  display: flex;
+}
+
+.shop {
+  padding-left: 100px;
+  margin-right: 200px;
+}
+.preis {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.addToCart {
+  border-color: rgba(23, 105, 106, 1);
+  margin-right: 15px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 6px 16px;
+  color: rgba(23, 105, 106, 1);
+  background-color: transparent;
+}
+
+.addToCart:hover {
+  color: white;
+  background-color: rgba(23, 105, 106, 1);
+}
