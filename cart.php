@@ -72,7 +72,7 @@ if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION[
 }
 
 
-template_header_cart();
+template_header();
 
 
 echo <<<EOT
