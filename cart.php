@@ -1,6 +1,6 @@
 <?php
 
-
+include './functions.php';
 @$productID = $_POST["productID"];
 @$quantity = $_POST['quantity'];
 
@@ -66,25 +66,9 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
 }
 
 
-?>
-
-<script>
-    //     document.addEventListener("change", myFunction);
-
-    //     function myFunction() {
-    //         <?php
 
 
 
-                //         
-                ?>
-    //     }
-    // 
-</script>
-
-<?php
-
-include './functions.php';
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
 if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     header('Location: placeorder.php');
@@ -195,7 +179,7 @@ echo "</div>";
 template_cart();
 
 echo "<input class='submit' type='submit' value='Complete order' />";
-echo "<input class='submit' name='update' type='submit' value='Update order' />";
+
 echo " </form>";
 echo "</div>";
 echo "</div>";

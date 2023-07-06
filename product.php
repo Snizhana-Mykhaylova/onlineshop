@@ -1,6 +1,6 @@
 <?php
 include './functions.php';
-
+session_start();
 $product = null;
 $productID = null;
 

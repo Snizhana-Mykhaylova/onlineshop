@@ -1,6 +1,6 @@
 <?php
 include './functions.php';
-
+session_start();
 @$kategorieNR = $_GET['KategorieNR'];
 
 $queryProducts = "SELECT * from artikel WHERE KategorieNR = $kategorieNR;";
