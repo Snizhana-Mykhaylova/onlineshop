@@ -29,7 +29,7 @@
                     ?>
                 </select>
 
-                <p> <input type="submit" value="Hinzufügen" class="submit-btn"> </p>
+                <p> <input style="margin-top: 10px;" type="submit" value="Hinzufügen" class="submit-btn"> </p>
 
                 <?php
                     @$artikel_name = $_POST["artikel-name"];

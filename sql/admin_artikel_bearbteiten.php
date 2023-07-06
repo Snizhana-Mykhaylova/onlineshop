@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="adminpanel.css">
         <?php 
             include "admin_navbar.php";
             navbar(); 
@@ -59,8 +58,8 @@
             <p> <input name="lagerbestand" type="text" size="50px" value="<?php echo $ergebnis[0]['Lagerbestand']?>"> Lagerbestand </p>
             
 
-            <p> Aktuelle Kategorie Nummer: <?php echo $ergebnis[0]['KategorieNR'] . " " . $ergebnis_name[0]['Kategoriename']; ?> </p>
-            <p> Wähle eine neue Kategorie Nummer vom Dropdown Menü aus.</p>
+            <p> Aktuelle Kategorie Nummer: <?php echo $ergebnis[0]['KategorieNR'] . " " . $ergebnis_name[0]['Kategoriename']; ?>
+            <br> Wähle eine neue Kategorie Nummer vom Dropdown Menü aus.</p>
             
             <select name="kategorie-nr">
 
@@ -92,7 +91,7 @@
 
             </select>
         
-            <p> <input type="submit" value="Update"> </p>
+            <p> <input style="margin-top: 10px;" type="submit" value="Update"> </p>
         
         </form>
     </body>
