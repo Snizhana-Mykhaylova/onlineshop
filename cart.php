@@ -1,5 +1,5 @@
 <?php
-include './functions.php';
+
 
 @$productID = $_POST["productID"];
 @$quantity = $_POST['quantity'];
@@ -46,31 +46,50 @@ if (isset($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'
     unset($_SESSION['cart'][$_GET['remove']]);
 }
 
-// // Update product quantities in cart if the user clicks the "Update" button on the shopping cart page
-// if (isset($_POST['update']) && isset($_SESSION['cart'])) {
-//     // Loop through the post data so we can update the quantities for every product in cart
-//     foreach ($_POST as $k => $v) {
-//         if (strpos($k, 'quantity') !== false ) {
-//             $id = str_replace('quantity-', '', $k);
-//             $quantity = $v;
-//             // Always do checks and validation
-//             if (isset($_SESSION['cart'][$id]) && $quantity > 0) {
-//                 // Update new quantity
-//                 $_SESSION['cart'][$id] = $quantity;
-//             }
-//         }
-//     }
-//     // Prevent form resubmission...
-//     header('location: cart.php');
-//     exit;
-// }
+// Update product quantities in cart if the user clicks the "Update" button on the shopping cart page
+if (isset($_POST['update']) && isset($_SESSION['cart'])) {
+    // Loop through the post data so we can update the quantities for every product in cart
+    foreach ($_POST as $k => $v) {
+        if (strpos($k, 'quantity') !== false) {
+            $id = str_replace('quantity-', '', $k);
+            $quantity = $v;
+            // Always do checks and validation
+            if (isset($_SESSION['cart'][$id]) && $quantity > 0) {
+                // Update new quantity
+                $_SESSION['cart'][$id] = $quantity;
+            }
+        }
+    }
+    // Prevent form resubmission...
+    header('location: cart.php');
+    exit;
+}
 
+
+?>
+
+<script>
+    //     document.addEventListener("change", myFunction);
+
+    //     function myFunction() {
+    //         <?php
+
+
+
+                //         
+                ?>
+    //     }
+    // 
+</script>
+
+<?php
+
+include './functions.php';
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
 if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     header('Location: placeorder.php');
     exit;
 }
-
 
 template_header();
 
@@ -123,9 +142,10 @@ if ($products_in_cart) {
         echo "<li class='rewiewItem' id='rewiewItem'>";
         echo "<img width='50' height='50' class='rewiewImg' src='./bilder/waren/img_" . $product[0]['ArtikelID'] . ".png' alt=''>";
         echo "<div class='itemText'> <p class='itemName'>" . $product[0]['Artikelname'] . "</p> </div>";
-        echo "<p class='preis'>" . $subtotal . "</p>";
+        echo "<p class='preis'>$" . number_format($subtotal, 2, ',', '.') . "</p>";
         echo "<input
                       class='itemAnzahl'
+                      id='quantity'
                       type='number'
                       name='quantity'
                       min='1'
@@ -151,22 +171,22 @@ $ordertotal = $total + $MWST - $rabat;
 echo "<div class='orderTotal'>";
 echo "<h3 class='captureSmall'>Order totals</h3>";
 echo "<ul>";
-echo "<li class='flex orderTotalItem'>";
+echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
 echo "<p>Subtotal:</p>";
-echo "<p class='preis'>$$total</p>";
+echo "<p class='preis'>$" . number_format($total, 2, ',', '.') . "</p>";
 echo "</li>";
 
-echo "<li class='flex orderTotalItem'>";
+echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
 echo "<p>Discount:</p>";
-echo "<p class='preis'>$$rabat</p>";
+echo "<p class='preis'>$" . number_format($rabat, 2, ',', '.') . "</p>";
 echo "</li>";
-echo "<li class='flex orderTotalItem'>";
+echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
 echo "<p>Estimated sales tax:</p>";
-echo "<p class='preis'>$$MWST</p>";
+echo "<p class='preis'>$" . number_format($MWST, 2, ',', '.') . "</p>";
 echo "</li>";
-echo "<li class='flex orderTotalItem'>";
+echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
 echo "<p class='captureSmall'>Order total:</p>";
-echo "<p class='preis'>$$ordertotal</p>";
+echo "<p class='preis'>$" . number_format($ordertotal, 2, ',', '.') . "</p>";
 echo "</li>";
 echo "</ul>";
 echo "</div>";
@@ -175,6 +195,7 @@ echo "</div>";
 template_cart();
 
 echo "<input class='submit' type='submit' value='Complete order' />";
+echo "<input class='submit' name='update' type='submit' value='Update order' />";
 echo " </form>";
 echo "</div>";
 echo "</div>";

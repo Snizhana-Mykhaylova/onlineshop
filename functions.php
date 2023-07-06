@@ -54,10 +54,10 @@ function template_header()
           </div>
           <div class="container">
             <section class="menu">
-              <div class="flex">
+              <div  style="justify-content: space-between;" class="flex">
                 <nav>
                   <a href="index.php"><img class="logo" src="./bilder/logo.png" alt="logo" /><a/>
-                  <ul class="flex">
+                  <ul  style="justify-content: space-between;" class="flex">
                     <li class="navItem">
                       <a href="./kategorieSite.php?KategorieNR=1">Woman</a>
                     </li>
@@ -92,66 +92,66 @@ function template_header()
 }
 
 
-// Template header cart
-function template_header_cart()
-{
-  $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-  echo <<<EOT
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>onlineshop</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="cartpage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  </head>
-  <body>
-  <header>
-      <div class="container">
-        <div class="kontakten">
-          <span class="tel">Available 24/7 at (405) 555-0128</span>
-        </div>
-      </div>
-      <div class="container">
-        <section class="menu">
-          <div class="flex">
-            <nav>
-            <a href="./index.php"><img class="logo" src="./bilder/logo.png" alt="logo" /></a>
-              
-              <ul class="flex">
-                <li class="navItem"><a href="">Woman</a></li>
-                <li class="navItem"><a href="">Men</a></li>
-                <li class="navItem"><a href="">Kids</a></li>
-              </ul>
-            </nav>
+// // Template header cart
+// function template_header_cart()
+// {
+//   $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+//   echo <<<EOT
+// <!DOCTYPE html>
+// <html>
+//   <head>
+//     <title>onlineshop</title>
+//     <meta charset="utf-8" />
+//     <link rel="stylesheet" href="cartpage.css" />
+//     <link rel="preconnect" href="https://fonts.googleapis.com" />
+//     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+//     <link
+//       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+//       rel="stylesheet"
+//     />
+//     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+//   </head>
+//   <body>
+//   <header>
+//       <div class="container">
+//         <div class="kontakten">
+//           <span class="tel">Available 24/7 at (405) 555-0128</span>
+//         </div>
+//       </div>
+//       <div class="container">
+//         <section class="menu">
+//           <div  style="justify-content: space-between;" class="flex">
+//             <nav>
+//             <a href="./index.php"><img class="logo" src="./bilder/logo.png" alt="logo" /></a>
 
-            <a class="cartIcon" href="./cart.php" />
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span class= "cartCount" >$num_items_in_cart</span>
-            <a/>
-            
-          </div>
-        </section>
-      </div>
-   
-  
-      <div class="container">
-        <div class="greunDiv"></div>
-        <div class="geschichteDiv">
-          <a href=""><img class="home" src="./bilder/Home.png" alt="home" /></a>
+//               <ul  style="justify-content: space-between;" class="flex">
+//                 <li class="navItem"><a href="">Woman</a></li>
+//                 <li class="navItem"><a href="">Men</a></li>
+//                 <li class="navItem"><a href="">Kids</a></li>
+//               </ul>
+//             </nav>
 
-          <img class="weiter" src="./bilder/Line (Stroke).png" alt="weiter" />
-          <a href="">Checkout</a>
-        </div>
- </header>
-EOT;
-}
+//             <a class="cartIcon" href="./cart.php" />
+//             <span class="material-symbols-outlined">shopping_cart</span>
+//             <span class= "cartCount" >$num_items_in_cart</span>
+//             <a/>
+
+//           </div>
+//         </section>
+//       </div>
+
+
+//       <div class="container">
+//         <div class="greunDiv"></div>
+//         <div class="geschichteDiv">
+//           <a href=""><img class="home" src="./bilder/Home.png" alt="home" /></a>
+
+//           <img class="weiter" src="./bilder/Line (Stroke).png" alt="weiter" />
+//           <a href="">Checkout</a>
+//         </div>
+//  </header>
+// EOT;
+// }
 // Template footer
 function template_footer()
 {
@@ -188,7 +188,7 @@ function template_cart()
               <section class="shippingSection">
                 <h2 class="captureSmall">2. Shipping & Billing Address</h2>
                 <ul>
-                  <div class="flex">
+                  <div  style="justify-content: space-between;"  style="justify-content: space-between;" class="flex">
                     <li class="shippinItem">
                       <p class="feldName">First Name</p>
                       <input
@@ -198,7 +198,7 @@ function template_cart()
                         placeholder="Your first name"
                       />
                     </li>
-                    <li class="shippinItem">
+                    <li  class="shippinItem">
                       <p class="feldName">Last Name</p>
                       <input
                         class="shippinInput"
@@ -208,7 +208,7 @@ function template_cart()
                     </li>
                   </div>
 
-                  <div class="flex">
+                  <div   style="justify-content: space-between;" class="flex">
                     <li class="shippinItem">
                       <p class="feldName">Email</p>
                       <input
@@ -227,7 +227,7 @@ function template_cart()
                     </li>
                   </div>
 
-                  <div class="flex">
+                  <div   style="justify-content: space-between;" class="flex">
                     <li class="shippinItem">
                       <p class="feldName">Country</p>
                       <input
@@ -246,7 +246,7 @@ function template_cart()
                     </li>
                   </div>
 
-                  <div class="flex">
+                  <div   style="justify-content: space-between;" class="flex">
                     <li class="shippinItem">
                       <p class="feldName">Adress</p>
                       <input
@@ -277,7 +277,7 @@ function template_cart()
               <section class="shippingMethodSection">
                 <h3 class="captureSmall">3. Shipping Method</h3>
                 <ul>
-                  <li class="shippingMethodItem flex">
+                  <li  style="justify-content: space-between;" style="justify-content: space-between;" class="shippingMethodItem flex">
                     <div>
                       <p class="schippingMehod">
                         <input name= "shippingMethod" value = "25.00" type="radio" checked="checked" />
@@ -288,7 +288,7 @@ function template_cart()
                     <p class="preis">$25.00</p>
                   </li>
 
-                  <li class="shippingMethodItem flex">
+                  <li  style="justify-content: space-between;" class="shippingMethodItem flex">
                     <div>
                       <p class="schippingMehod">
                         <input name= "shippingMethod" value = "00.00" type="radio" />
@@ -299,7 +299,7 @@ function template_cart()
                     <p class="preis" >Free</p>
                   </li>
 
-                  <li class="shippingMethodItem flex">
+                  <li  style="justify-content: space-between;" class="shippingMethodItem flex">
                     <div><p>
                       <div><input name= "shippingMethod" value = "25.00" type="radio" />
                       <span class="shippingMethodName"
@@ -310,7 +310,7 @@ function template_cart()
                     <p class="preis">$10.00</p>
                   </li>
 
-                  <li class="shippingMethodItem flex">
+                  <li  style="justify-content: space-between;" class="shippingMethodItem flex">
                     <div><p class="schippingMehod">
                       <input name= "shippingMethod" type="radio" />
                       <span class="shippingMethodName">Pick up at Createx Locker</span>
@@ -319,7 +319,7 @@ function template_cart()
                     <p class="preis">$8.50</p>
                   </li>
 
-                  <li class="shippingMethodItem flex">
+                  <li  style="justify-content: space-between;" class="shippingMethodItem flex">
                     <div><p class="schippingMehod">
                       <input name= "shippingMethod" type="radio" />
                       <span class="shippingMethodName">Createx Global Export</span>
