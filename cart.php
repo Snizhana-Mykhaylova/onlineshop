@@ -100,7 +100,7 @@ echo <<<EOT
         <div class="container">
           <div class="formBox">
             
-            <form action="">
+            <form action="placeorder.php" method="post">
           
               <section class="itemRewiew">
                 <h3 class="captureSmall">1. Item Review</h3>
