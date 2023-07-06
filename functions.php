@@ -36,6 +36,7 @@ function template_header()
       <title>onlineshop</title>
       <meta charset="utf-8" />
       <link rel="stylesheet" href="homepage.css" />
+      <link rel="stylesheet" href="cartpage.css" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -79,7 +80,7 @@ function template_header()
                   <a href="./login/login.php"> <img id="login-icon" width="32px" height="32px" src="./bilder/login/login-icon.png" alt="login icon"></a>
                   <p id="username-login">
   EOT;
-                    echo htmlspecialchars(@$_SESSION["username"]);
+  echo htmlspecialchars(@$_SESSION["username"]);
   echo <<<EOT
                   </p>
               </div>
@@ -335,6 +336,7 @@ function template_cart()
 }
 
 
-function shopNow(){
+function shopNow()
+{
   header("location: ./kategorieSite.php?KategorieNR=2");
 }
