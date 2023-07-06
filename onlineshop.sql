@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 04. Jul 2023 um 13:15
+-- Erstellungszeit: 06. Jul 2023 um 10:43
 -- Server-Version: 10.4.28-MariaDB
 -- PHP-Version: 8.2.4
 
@@ -50,10 +50,8 @@ INSERT INTO `artikel` (`ArtikelID`, `Artikelname`, `Beschreibung`, `Einzelpreis`
 (11, 'Chrono watch', 'Chrono watch with blue armband', 120.60, '/', 60, 2),
 (12, 'Baby shoes', 'Baby shoes with laces', 30.60, '/', 70, 3),
 (13, 'Green baby romper', 'Green baby romper for children', 20.40, '/', 55, 3),
-(14, 'Green children pants', 'Green pants for children', 39.99, './onlineshop/bilder/artikel/green_children_pants.png', 12, 3),
 (17, 'Check coat with colour contrast', 'A coat', 129.99, '/', 22, 1),
 (18, 'Leather crossbody bag', 'A leather bag', 299.99, '/', 99, 1);
-
 
 -- --------------------------------------------------------
 
@@ -120,7 +118,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
 (1, 'admin', 'admin123', '2023-06-29 11:59:02'),
-(2, 'Kenan', '$2y$10$bjcylw0bSG4we3XV8Mw1tuqdxtKwBTXF11PAwla2gsCUMJsybai.W', '2023-06-29 10:19:57');
+(3, 'Johannes', '$2y$10$dn42uZI8EJ54nf5An.Ov.urp/tWgJwcn9CbYnilskeEXE9DqfEUJq', '2023-07-04 13:33:58'),
+(4, 'Snizhana', '$2y$10$1jCgD.BEhYAKbCpk9i93a.OVmjzsBq.x2.SnLLWrpAMpobzpHve6u', '2023-07-05 10:30:23'),
+(6, 'Csaba', '$2y$10$H979VQwkSvqqbVQero4iHOmAtoy92N6hiaVxKDxk0c2Jk132NKQBC', '2023-07-05 14:56:40'),
+(7, 'Jonathan', '$2y$10$Tcw28yQCNxvvxJP4iZkJNOpdVMlhhiHydNm.035BzJervCBZuQtdm', '2023-07-06 10:20:45');
 
 --
 -- Indizes der exportierten Tabellen
@@ -186,7 +187,7 @@ ALTER TABLE `bestellungen`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints der exportierten Tabellen
