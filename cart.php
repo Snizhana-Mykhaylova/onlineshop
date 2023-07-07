@@ -160,7 +160,6 @@ echo "
     <li style='justify-content: space-between;' class='flex orderTotalItem'>
     <p>Subtotal:</p>
     <p class='preis'>$" . number_format($subtotal, 2, ',', '.') . "</p>
-    </
     <li style='justify-content: space-between;' class='flex orderTotalItem'>
     <p>Discount:</p>
     <p class='preis'>$" . number_format($rabat, 2, ',', '.') . "</p>
