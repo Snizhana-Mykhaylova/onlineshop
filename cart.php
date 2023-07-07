@@ -63,6 +63,7 @@ if (isset($_GET['increment']) && isset($_SESSION['cart']) && isset($_SESSION['ca
         }
     }
 }
+
 $zahlQuantity = NULL;
 
 if (isset($_GET['decrement']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['decrement']])) {

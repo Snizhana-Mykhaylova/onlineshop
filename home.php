@@ -13,7 +13,7 @@ template_header();
     <div class="greunDiv"></div>
     <section class="baner">
         <div class="banerText">
-            <p class="captureSmall">new collection</p>
+            <p class="captureSmall">New Collection</p>
             <p class="captureGross">Menswear 2020</p>
             <a href="./kategorieSite.php?KategorieNR=2">
                 <button class="button">Shop now</button>

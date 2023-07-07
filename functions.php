@@ -15,8 +15,8 @@ function getProducts($sql)
     );
 
     //schikt die Abfrage an die Datenbank und speichert die Ergebniss in eine Variable
-    $reuckgabe = $dbh->query($sql);
-    $products = $reuckgabe->fetchALL(PDO::FETCH_ASSOC);
+    $rueckgabe = $dbh->query($sql);
+    $products = $rueckgabe->fetchALL(PDO::FETCH_ASSOC);
     $dbh = null; //close
 
     return $products;
@@ -99,9 +99,6 @@ function template_footer()
                     <ul>
                         <li class="captureSmall">Shop</li>
                         <li class="captureSmall"><a href="">New arrivals</a></li>
-                        <li class="captureSmall"><a href="">Woman</a></li>
-                        <li class="captureSmall"><a href="">Men</a></li>
-                        <li class="captureSmall"><a href="">Kids</a></li>
                     </ul>
                 </div>
 
