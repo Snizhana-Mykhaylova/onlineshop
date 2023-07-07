@@ -76,7 +76,7 @@ function template_header()
               <span>$num_items_in_cart</span>
               <a/>
                 
-                <div class="loginContainer">
+                <div style="align-items: center; flex-direction: column; display: flex;" class="loginContainer">
                   <a href="./login/login.php"> <img id="login-icon" width="32px" height="32px" src="./bilder/login/login-icon.png" alt="login icon"></a>
                   <p id="username-login">
   EOT;
