@@ -46,24 +46,24 @@ if (isset($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'
     unset($_SESSION['cart'][$_GET['remove']]);
 }
 
-// Update product quantities in cart if the user clicks the "Update" button on the shopping cart page
-if (isset($_POST['update']) && isset($_SESSION['cart'])) {
-    // Loop through the post data so we can update the quantities for every product in cart
-    foreach ($_POST as $k => $v) {
-        if (strpos($k, 'quantity') !== false) {
-            $id = str_replace('quantity-', '', $k);
-            $quantity = $v;
-            // Always do checks and validation
-            if (isset($_SESSION['cart'][$id]) && $quantity > 0) {
-                // Update new quantity
-                $_SESSION['cart'][$id] = $quantity;
-            }
-        }
-    }
-    // Prevent form resubmission...
-    header('location: cart.php');
-    exit;
-}
+// // Update product quantities in cart if the user clicks the "Update" button on the shopping cart page
+// if (isset($_POST['update']) && isset($_SESSION['cart'])) {
+//     // Loop through the post data so we can update the quantities for every product in cart
+//     foreach ($_POST as $k => $v) {
+//         if (strpos($k, 'quantity') !== false) {
+//             $id = str_replace('quantity-', '', $k);
+//             $quantity = $v;
+//             // Always do checks and validation
+//             if (isset($_SESSION['cart'][$id]) && $quantity > 0) {
+//                 // Update new quantity
+//                 $_SESSION['cart'][$id] = $quantity;
+//             }
+//         }
+//     }
+//     // Prevent form resubmission...
+//     header('location: cart.php');
+//     exit;
+// }
 
 
 
@@ -97,7 +97,6 @@ EOT;
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $products = array();
 $subtotal = 0.00;
-$total = 0.00;
 $ordertotal = 0.00;
 $rabat =  0.00;
 $MWST = 0.00;
@@ -113,20 +112,15 @@ if ($products_in_cart) {
     foreach ($products_in_cart as $id => $quant) {
 
         // Fetch the products from the database and return the result as an Array
-        $sqlQuery = "SELECT * from artikel WHERE ArtikelID = $id";
+        $sqlQuery = "SELECT * from artikel WHERE ArtikelID = $id;";
         $product = getProducts($sqlQuery);
 
-
-        // Calculate the subtotal
-        $subtotal += floatval($product[0]['Einzelpreis'])  * $quant;
-        // echo $subtotal;
-
-        $total += (float)$subtotal;
+        $preis = $product[0]['Einzelpreis'];
 
         echo "<li class='rewiewItem' id='rewiewItem'>";
         echo "<img width='50' height='50' class='rewiewImg' src='./bilder/waren/img_" . $product[0]['ArtikelID'] . ".png' alt=''>";
         echo "<div class='itemText'> <p class='itemName'>" . $product[0]['Artikelname'] . "</p> </div>";
-        echo "<p class='preis'>$" . number_format($subtotal, 2, ',', '.') . "</p>";
+        echo "<p class='preis'>$" . number_format($preis, 2, ',', '.') . "</p>";
         echo "<input
                       class='itemAnzahl'
                       id='quantity'
@@ -139,16 +133,19 @@ if ($products_in_cart) {
                     />";
 
         echo "<a class=button href='cart.php?remove=" . $product[0]['ArtikelID'] . "' class='remove'>Remove</a>";
-
         echo "</li>";
+
+        // Calculate the zwischensumme 
+        $zwischensumme = $preis  * $quant;
+        $subtotal += $zwischensumme;
     }
 } else {
     echo "<h2 style='text-align:center;'>You have no products added in your Shopping Cart</h2>";
 }
 
-$rabat = $total > 300 ? $total * 0.05 : 0.00;
-$MWST = $total > 0.00 ? $total * 0.19 : 0.00;
-$ordertotal = $total + $MWST - $rabat;
+$rabat = $subtotal > 300 ? $subtotal * 0.05 : 0.00;
+$MWST = $subtotal > 0.00 ? $subtotal * 0.19 : 0.00;
+$ordertotal = $subtotal + $MWST - $rabat;
 
 
 // Oder Total section 
@@ -157,7 +154,7 @@ echo "<h3 class='captureSmall'>Order totals</h3>";
 echo "<ul>";
 echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
 echo "<p>Subtotal:</p>";
-echo "<p class='preis'>$" . number_format($total, 2, ',', '.') . "</p>";
+echo "<p class='preis'>$" . number_format($subtotal, 2, ',', '.') . "</p>";
 echo "</li>";
 
 echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
