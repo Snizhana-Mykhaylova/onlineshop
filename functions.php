@@ -91,68 +91,6 @@ function template_header()
   EOT;
 }
 
-
-// // Template header cart
-// function template_header_cart()
-// {
-//   $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-//   echo <<<EOT
-// <!DOCTYPE html>
-// <html>
-//   <head>
-//     <title>onlineshop</title>
-//     <meta charset="utf-8" />
-//     <link rel="stylesheet" href="cartpage.css" />
-//     <link rel="preconnect" href="https://fonts.googleapis.com" />
-//     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-//     <link
-//       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-//       rel="stylesheet"
-//     />
-//     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-//   </head>
-//   <body>
-//   <header>
-//       <div class="container">
-//         <div class="kontakten">
-//           <span class="tel">Available 24/7 at (405) 555-0128</span>
-//         </div>
-//       </div>
-//       <div class="container">
-//         <section class="menu">
-//           <div  style="justify-content: space-between;" class="flex">
-//             <nav>
-//             <a href="./index.php"><img class="logo" src="./bilder/logo.png" alt="logo" /></a>
-
-//               <ul  style="justify-content: space-between;" class="flex">
-//                 <li class="navItem"><a href="">Woman</a></li>
-//                 <li class="navItem"><a href="">Men</a></li>
-//                 <li class="navItem"><a href="">Kids</a></li>
-//               </ul>
-//             </nav>
-
-//             <a class="cartIcon" href="./cart.php" />
-//             <span class="material-symbols-outlined">shopping_cart</span>
-//             <span class= "cartCount" >$num_items_in_cart</span>
-//             <a/>
-
-//           </div>
-//         </section>
-//       </div>
-
-
-//       <div class="container">
-//         <div class="greunDiv"></div>
-//         <div class="geschichteDiv">
-//           <a href=""><img class="home" src="./bilder/Home.png" alt="home" /></a>
-
-//           <img class="weiter" src="./bilder/Line (Stroke).png" alt="weiter" />
-//           <a href="">Checkout</a>
-//         </div>
-//  </header>
-// EOT;
-// }
-// Template footer
 function template_footer()
 {
   echo <<<EOT
@@ -192,10 +130,11 @@ function template_cart()
                     <li class="shippinItem">
                       <p class="feldName">First Name</p>
                       <input
-                      name="name"
+                        name="name"
                         class="shippinInput"
                         type="text"
                         placeholder="Your first name"
+                        required
                       />
                     </li>
                     <li  class="shippinItem">
@@ -204,6 +143,7 @@ function template_cart()
                         class="shippinInput"
                         type="text"
                         placeholder="Your last name"
+                        required
                       />
                     </li>
                   </div>
@@ -223,6 +163,7 @@ function template_cart()
                         class="shippinInput"
                         type="text"
                         placeholder="Your last name"
+                        required
                       />
                     </li>
                   </div>
@@ -234,6 +175,7 @@ function template_cart()
                         class="shippinInput"
                         type="text"
                         placeholder="Your country"
+                        required
                       />
                     </li>
                     <li class="shippinItem">
@@ -242,6 +184,7 @@ function template_cart()
                         class="shippinInput"
                         type="text"
                         placeholder="Your city"
+                        required
                       />
                     </li>
                   </div>
@@ -253,6 +196,7 @@ function template_cart()
                         class="shippinInput"
                         type="text"
                         placeholder="Your address"
+                        required
                       />
                     </li>
                     <li class="shippinItem">
@@ -261,6 +205,7 @@ function template_cart()
                         class="shippinInput"
                         type="text"
                         placeholder="Your ZIP Code"
+                        required
                       />
                     </li>
                   </div>

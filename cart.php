@@ -48,8 +48,7 @@ if (isset($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'
 
 if (isset($_GET['increment']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['increment']])) {
 
-    var_dump($_GET);
-    var_dump($_SESSION['cart']);
+
     $cart = $_SESSION['cart'];
     foreach ($cart as $k => $quantity) {
 
@@ -60,7 +59,6 @@ if (isset($_GET['increment']) && isset($_SESSION['cart']) && isset($_SESSION['ca
             if (isset($_SESSION['cart'][$_GET['increment']]) && $quantity > 0) {
                 // increment new quantity
                 $_SESSION['cart'][$_GET['increment']] = $zahlQuantity;
-                var_dump($_SESSION['cart']);
             }
         }
     }
@@ -69,8 +67,7 @@ $zahlQuantity = NULL;
 
 if (isset($_GET['decrement']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['decrement']])) {
 
-    var_dump($_GET);
-    var_dump($_SESSION['cart']);
+
     $cart = $_SESSION['cart'];
     foreach ($cart as $k => $quantity) {
 
@@ -79,9 +76,8 @@ if (isset($_GET['decrement']) && isset($_SESSION['cart']) && isset($_SESSION['ca
             $zahlQuantity--;
 
             if (isset($_SESSION['cart'][$_GET['decrement']]) && $zahlQuantity > 0) {
-                // increment new quantity
+                // decrement new quantity
                 $_SESSION['cart'][$_GET['decrement']] = $zahlQuantity;
-                var_dump($_SESSION['cart']);
             }
         }
     }
@@ -140,10 +136,12 @@ if ($products_in_cart) {
         echo "<img width='50' height='50' class='rewiewImg' src='./bilder/waren/img_" . $product[0]['ArtikelID'] . ".png' alt=''>";
         echo "<div class='itemText'> <p class='itemName'>" . $product[0]['Artikelname'] . "</p> </div>";
         echo "<p class='preis'>$" . number_format($preis, 2, ',', '.') . "</p>";
+        echo "<a style='margin-right: 15px; width: 35px;' class=button href='cart.php?decrement=" . $product[0]['ArtikelID'] . "' class='decrement'>-</a>";
         echo "<p class='preis'>" . $quant . "</p>";
+        echo "<a style='margin-right: 15px;  width: 35px;' class=button href='cart.php?increment=" . $product[0]['ArtikelID'] . "' class='increment'>+</a>";
         echo "<a class=button href='cart.php?remove=" . $product[0]['ArtikelID'] . "' class='remove'>Remove</a>";
-        echo "<a class=button href='cart.php?increment=" . $product[0]['ArtikelID'] . "' class='increment'>+</a>";
-        echo "<a class=button href='cart.php?decrement=" . $product[0]['ArtikelID'] . "' class='decrement'>-</a>";
+
+
         echo "</li>";
 
         // Calculate the zwischensumme 
