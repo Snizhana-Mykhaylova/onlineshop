@@ -84,12 +84,6 @@ if (isset($_GET['decrement']) && isset($_SESSION['cart']) && isset($_SESSION['ca
 }
 
 
-// Send the user to the place order page if they click the Place Order button, also the cart should not be empty
-if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    header('Location: placeorder.php');
-    exit;
-}
-
 template_header();
 
 
@@ -158,33 +152,36 @@ $ordertotal = $subtotal + $MWST - $rabat;
 
 
 // Oder Total section 
-echo "<div class='orderTotal'>";
-echo "<h3 class='captureSmall'>Order totals</h3>";
-echo "<ul>";
-echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
-echo "<p>Subtotal:</p>";
-echo "<p class='preis'>$" . number_format($subtotal, 2, ',', '.') . "</p>";
-echo "</li>";
-
-echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
-echo "<p>Discount:</p>";
-echo "<p class='preis'>$" . number_format($rabat, 2, ',', '.') . "</p>";
-echo "</li>";
-echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
-echo "<p>Estimated sales tax:</p>";
-echo "<p class='preis'>$" . number_format($MWST, 2, ',', '.') . "</p>";
-echo "</li>";
-echo "<li style='justify-content: space-between;' class='flex orderTotalItem'>";
-echo "<p class='captureSmall'>Order total:</p>";
-echo "<p class='preis'>$" . number_format($ordertotal, 2, ',', '.') . "</p>";
-echo "</li>";
-echo "</ul>";
-echo "</div>";
-
+echo "
+    <div class='orderTotal'>
+    <h3 class='captureSmall'>Order totals</h3>
+    <ul>
+    <li style='justify-content: space-between;' class='flex orderTotalItem'>
+    <p>Subtotal:</p>
+    <p class='preis'>$" . number_format($subtotal, 2, ',', '.') . "</p>
+    </
+    <li style='justify-content: space-between;' class='flex orderTotalItem'>
+    <p>Discount:</p>
+    <p class='preis'>$" . number_format($rabat, 2, ',', '.') . "</p>
+    </li>
+    <li style='justify-content: space-between;' class='flex orderTotalItem'>
+    <p>Estimated sales tax:</p>
+    <p class='preis'>$" . number_format($MWST, 2, ',', '.') . "</p>
+    </li>
+    <li style='justify-content: space-between;' class='flex orderTotalItem'>
+    <p class='captureSmall'>Order total:</p>
+    <p class='preis'>$" . number_format($ordertotal, 2, ',', '.') . "</p>
+    </li>
+    </ul>
+    </div>
+";
 
 template_cart();
 
-echo "<input class='submit' type='submit' value='Complete order' />";
+if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+
+    echo "<input class='submit' type='submit' value='Complete order' />";
+}
 
 echo " </form>";
 echo "</div>";

@@ -216,7 +216,9 @@ function template_cart()
                   same
                 </p>
               </section>
+    EOT;
 
+  echo <<<EOT
               <!-- shipping Method Section -->
 
               <section class="shippingMethodSection">
