@@ -78,54 +78,14 @@ if (isset($_GET['decrement']) && isset($_SESSION['cart']) && isset($_SESSION['ca
             $zahlQuantity = floatval($quantity);
             $zahlQuantity--;
 
-            if (isset($_SESSION['cart'][$_GET['decrement']]) && $quantity > 0) {
+            if (isset($_SESSION['cart'][$_GET['decrement']]) && $zahlQuantity > 0) {
                 // increment new quantity
                 $_SESSION['cart'][$_GET['decrement']] = $zahlQuantity;
                 var_dump($_SESSION['cart']);
             }
         }
     }
-
-
-
-    //  Loop through the post data so we can update the quantities for every product in cart
-    // foreach ($_POST as $k => $v) {
-    //     if (strpos($k, 'quantity') !== false) {
-    //         $id = str_replace('quantity-', '', $k);
-    //         $quantity++;
-    //         // Always do checks and validation
-    //         if (isset($_SESSION['cart'][$id]) && $quantity > 0) {
-    //             // Update new quantity
-    //             $_SESSION['cart'][$id] = $quantity;
-    //         }
-    //     }
-    // }
-    // // Prevent form resubmission...
-    // header('location: cart.php');
-    // exit;
 }
-
-// // Update product quantities in cart if the user clicks the "Update" button on the shopping cart page
-// if (isset($_POST['update']) && isset($_SESSION['cart'])) {
-//     // Loop through the post data so we can update the quantities for every product in cart
-//     foreach ($_POST as $k => $v) {
-//         if (strpos($k, 'quantity') !== false) {
-//             $id = str_replace('quantity-', '', $k);
-//             $quantity = $v;
-//             // Always do checks and validation
-//             if (isset($_SESSION['cart'][$id]) && $quantity > 0) {
-//                 // Update new quantity
-//                 $_SESSION['cart'][$id] = $quantity;
-//             }
-//         }
-//     }
-//     // Prevent form resubmission...
-//     header('location: cart.php');
-//     exit;
-// }
-
-
-
 
 
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
