@@ -125,11 +125,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
-<<<<<<< Updated upstream
-            </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-        </form>
-=======
                 <a href="../index.php" class="btn btn-secondary">Zurück </a>
                 
             </div>
@@ -137,7 +132,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
         <div class="form-group">
         </div>
->>>>>>> Stashed changes
     </div>
 </body>
 </html>
