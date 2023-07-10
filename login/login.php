@@ -7,7 +7,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: welcome.php");
     exit;
 }
- 
+
 // Include config file
 require_once "config.php";
  
@@ -125,13 +125,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
+
+                <a href="../index.php" class="btn btn-secondary">Zurück </a>
+
                 
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
-        <a href="../index.php">
-            <button style="position: absolute; top: 257px; left: 100px;" class="btn btn-secondary">Zurück</button>
-        </a>
+
         <div class="form-group">
         </div>
     </div>
