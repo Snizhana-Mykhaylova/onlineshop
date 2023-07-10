@@ -1,16 +1,15 @@
-
 <?php
-    include './functions.php';
+include './functions.php';
+session_start();
+@$kategorieNR = $_GET['KategorieNR'];
 
-    @$kategorieNR = $_GET['KategorieNR'];
+$queryProducts = "SELECT * from artikel WHERE KategorieNR = $kategorieNR;";
+$products = getProducts($queryProducts);
 
-    $queryProducts = "SELECT * from artikel WHERE KategorieNR = $kategorieNR;";
-    $products = getProducts($queryProducts);
-
-    template_header();
+template_header();
 ?>
 
-<div class="container">
+<div style="padding: 100px 150px;" class="container">
 
     <ul class="flex">
 

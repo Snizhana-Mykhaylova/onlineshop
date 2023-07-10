@@ -1,11 +1,11 @@
 <?php
-    // This file will be the home page that will contain a featured image and 4 recently added products.
+// This file will be the home page that will contain a featured image and 4 recently added products.
 
-    include './functions.php';
-    $queryProducts = "SELECT * from artikel LIMIT 6; ";
-    $products = getProducts($queryProducts);
+include './functions.php';
+$queryProducts = "SELECT * from artikel LIMIT 6; ";
+$products = getProducts($queryProducts);
 
-    template_header();
+template_header();
 ?>
 
 
@@ -13,7 +13,7 @@
     <div class="greunDiv"></div>
     <section class="baner">
         <div class="banerText">
-            <p class="captureSmall">new collection</p>
+            <p class="captureSmall">New Collection</p>
             <p class="captureGross">Menswear 2020</p>
             <a href="./kategorieSite.php?KategorieNR=2">
                 <button class="button">Shop now</button>
@@ -49,7 +49,7 @@
 <section class="waren">
     <div class="container">
         <h2 class="sectionTittel">New arrivals</h2>
-        
+
         <ul class="flex">
 
             <?php foreach ($products as $product) : ?>

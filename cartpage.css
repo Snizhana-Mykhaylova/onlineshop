@@ -1,120 +1,4 @@
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 700,
-    'GRAD'200,
-    'opsz' 48
-}
 
-
-
-html {
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Montserrat', sans-serif;
-  color: #1e212c;
-}
-
-section {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover{
-  color: #17696a;
-}
-
-li {
-  list-style: none;
-  text-decoration: none;
-}
-
-p,
-h1,
-h2,
-ul {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 0px;
-}
-
-button,
-input {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  text-transform: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-}
-.container {
-  max-width: 1900px;
-  margin-right: auto;
-  margin-left: auto;
-
-}
-
-.kontakten {
-  color: white;
-  background: #1e212c;
-  padding: 20px 100px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-}
-
-.menu {
-  padding: 20px 100px;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  width: 130px;
-  height: 22px;
-  margin-right: 50px;
-}
-
-.cartIcon{
-  margin-right: 20px;
-}
-.cartCount{
-      position: relative;
-        top: 5px;
-        right: 5px;
-}
-
-
-
-nav {
-  display: flex;
-  margin-right: auto;
-  align-items: center;
-}
-
-.navItem {
-  margin-right: 25px;
-}
-
-.greunDiv {
-  height: 34px;
-  background-color: #17696a;
-}
 
 .geschichteDiv{
   background-color: #F4F5F6;
@@ -290,6 +174,7 @@ font-weight: 700;
   border-radius: 4px;
   color: #17696a;
   width: 152px;
+  height: auto;
   padding-top: 7px;
   padding-bottom: 7px;
   text-align: center;
